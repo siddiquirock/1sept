@@ -1,7 +1,7 @@
 module "resource-group" {
   source              = "../childmodule/azure_resource_group"
   resource_group_name = "dev1rg"
-  location            = "AB"
+  location            = ""
 }
 
 module "virtual-network" {
