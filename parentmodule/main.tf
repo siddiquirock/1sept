@@ -1,14 +1,14 @@
 module "resource-group" {
   source              = "../childmodule/azure_resource_group"
-  resource_group_name = "dev2001rg"
-  location            = "Westus"
+  resource_group_name = "dev1rg"
+  location            = "eastus"
 }
 
 module "virtual-network" {
   depends_on           = [module.resource-group]
   source               = "../childmodule/azure_vnet"
   resource_group_name  = "dev2001rg"
-  location             = ""
+  location             = "Westus"
   virtual_network_name = "dev2001vnet"   # 👈 match with VM
   address_space        = ["10.0.0.0/16"]
 }
