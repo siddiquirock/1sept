@@ -8,7 +8,7 @@ module "virtual-network" {
   depends_on           = [module.resource-group]
   source               = "../childmodule/azure_vnet"
   resource_group_name  = "dev2001rg"
-  location             = "CentralUS"
+  location             = "Westus"
   virtual_network_name = "dev2001vnet"   # 👈 match with VM
   address_space        = ["10.0.0.0/16"]
 }
